@@ -1,0 +1,32 @@
+@using animetflix.Models.Entities
+@model List<Genero>
+
+<h1>Lista de generos</h1>
+<div class="form-group">
+    <a class="btn btn-info">Agregar Género</a>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var genero in Model)
+                {
+                    <tr>
+                        <td>
+                            <a class="btn btn-success">Editar</a>
+                            <a class="btn btn-danger">Eliminar</a>
+                        </td>
+                        <td>@genero.Nombre</td>
+                    </tr>   
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

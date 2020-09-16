@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - animetflix</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css?v=1sssss" />
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-2">
+            <div id="sidebar-container" class="gradient">
+                <div class="logo">
+                    <h4 class="text-light font-weight-bold">ANIMETFLIX</h4>
+                </div>
+                <div class="menu">
+                    <a asp-controller="Home" asp-action="Index" class="d-block text-light p-3"><i class="icon ion-md-home mr-2 lead"></i>Home</a>
+                    <a href="#" class="d-block text-light p-3"><i class="icon ion-md-contacts mr-2 lead"></i>Personajes</a>
+                    <a href="#" class="d-block text-light p-3"><i class="icon ion-md-videocam mr-2 lead"></i>Series</a>
+                    <a asp-controller="Generos" asp-action="Index" class="d-block text-light p-3"><i class="icon ion-md-transgender mr-2 lead"></i>Géneros</a>
+                    <a href="#" class="d-block text-light p-3"><i class="icon ion-md-settings mr-2 lead"></i>Configuración</a>
+                </div>
+            </div>
+        </div>
+        <div class="container col-md-8 pt-3">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - animetflix - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

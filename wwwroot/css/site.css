@@ -1,0 +1,43 @@
+﻿:root {
+  --primary: #111854;
+  --light: #ffffff;
+  --grey: #efefef;
+}
+
+#sidebar-container {
+  min-height: 95vh;
+}
+
+#sidebar-container .logo {
+  padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu {
+  width: 18rem;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+body {
+  overflow: hidden;
+  font-family: 'Baloo Tammudu 2', cursive;
+  font-weight: 300;
+  color: var(--primary);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.gradient {
+  background: rgba(74,133,191,1);
+  background: -moz-linear-gradient(top, rgba(74,133,191,1) 0%, rgba(117,163,209,1) 59%, rgba(146,184,221,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(74,133,191,1)), color-stop(59%, rgba(117,163,209,1)), color-stop(100%, rgba(146,184,221,1)));
+  background: -webkit-linear-gradient(top, rgba(74,133,191,1) 0%, rgba(117,163,209,1) 59%, rgba(146,184,221,1) 100%);
+  background: -o-linear-gradient(top, rgba(74,133,191,1) 0%, rgba(117,163,209,1) 59%, rgba(146,184,221,1) 100%);
+  background: -ms-linear-gradient(top, rgba(74,133,191,1) 0%, rgba(117,163,209,1) 59%, rgba(146,184,221,1) 100%);
+  background: linear-gradient(to bottom, rgba(74,133,191,1) 0%, rgba(117,163,209,1) 59%, rgba(146,184,221,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a85bf', endColorstr='#92b8dd', GradientType=0 );
+}
