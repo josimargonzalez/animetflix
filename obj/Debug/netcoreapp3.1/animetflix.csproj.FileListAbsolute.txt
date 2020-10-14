@@ -77,3 +77,6 @@
 /home/josimarg/git/animetflix/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
 /home/josimarg/git/animetflix/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
 /home/josimarg/git/animetflix/obj/Debug/netcoreapp3.1/Razor/Views/Generos/index.cshtml.g.cs
+/home/josimarg/git/animetflix/obj/Debug/netcoreapp3.1/Razor/Views/Generos/create.cshtml.g.cs
+/home/josimarg/git/animetflix/obj/Debug/netcoreapp3.1/Razor/Views/Generos/edit.cshtml.g.cs
+/home/josimarg/git/animetflix/obj/Debug/netcoreapp3.1/Razor/Views/Generos/delete.cshtml.g.cs

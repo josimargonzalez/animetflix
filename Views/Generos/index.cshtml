@@ -1,32 +1,37 @@
 @using animetflix.Models.Entities
 @model List<Genero>
 
-<h1>Lista de generos</h1>
+<h1>Lista de Géneros</h1>
 <div class="form-group">
-    <a class="btn btn-info">Agregar Género</a>
+    <a asp-controller="generos" asp-action="create" class="btn btn-info">Agregar Género</a>
 </div>
-<hr>
+<br>
 <div class="row">
     <div class="col-md-6">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Nombre</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var genero in Model)
-                {
+        @if (Model.Count() > 0)
+        {
+            <table class="table table-hover table-dark table-stripped">
+                <thead>
                     <tr>
-                        <td>
-                            <a class="btn btn-success">Editar</a>
-                            <a class="btn btn-danger">Eliminar</a>
-                        </td>
-                        <td>@genero.Nombre</td>
-                    </tr>   
-                }
-            </tbody>
-        </table>
+                        <th>Opciones</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var genero in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-controller="generos" asp-action="edit" asp-route-id="@genero.Id" class="btn btn-success">Editar</a>
+                                <a asp-controller="generos" asp-action="delete" asp-route-id="@genero.Id" class="btn btn-danger">Eliminar</a>
+                            </td>
+                            <td>@genero.Nombre</td>
+                        </tr>   
+                    }
+                </tbody>
+            </table>
+        } else {
+            <h3>No existen géneros para mostrar</h3>
+        }
     </div>
 </div>

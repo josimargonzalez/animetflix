@@ -32,12 +32,12 @@ a:hover {
 }
 
 .gradient {
-  background: rgba(74,133,191,1);
-  background: -moz-linear-gradient(top, rgba(74,133,191,1) 0%, rgba(117,163,209,1) 59%, rgba(146,184,221,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(74,133,191,1)), color-stop(59%, rgba(117,163,209,1)), color-stop(100%, rgba(146,184,221,1)));
-  background: -webkit-linear-gradient(top, rgba(74,133,191,1) 0%, rgba(117,163,209,1) 59%, rgba(146,184,221,1) 100%);
-  background: -o-linear-gradient(top, rgba(74,133,191,1) 0%, rgba(117,163,209,1) 59%, rgba(146,184,221,1) 100%);
-  background: -ms-linear-gradient(top, rgba(74,133,191,1) 0%, rgba(117,163,209,1) 59%, rgba(146,184,221,1) 100%);
-  background: linear-gradient(to bottom, rgba(74,133,191,1) 0%, rgba(117,163,209,1) 59%, rgba(146,184,221,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a85bf', endColorstr='#92b8dd', GradientType=0 );
+  background: rgba(0,0,0,1);
+  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(75,134,180,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(75,134,180,1)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(75,134,180,1) 100%);
+  background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(75,134,180,1) 100%);
+  background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(75,134,180,1) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(75,134,180,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#4b86b4', GradientType=0 );
 }

@@ -1,0 +1,23 @@
+@using animetflix.Models.Entities
+@model Genero
+
+<h3>Eliminar Género</h3>
+<hr>
+<h3>¿Esta seguro de eliminar el registro?</h3>
+<div>
+    <h4>Género</h4>
+    <hr>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+    <form asp-controller="generos" asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id">
+        <input type="submit" class="btn btn-danger" value="Eliminar">
+        <a class="btn btn-primary" asp-action="Index">Volver a la lista</a>
+    </form>
+</div>

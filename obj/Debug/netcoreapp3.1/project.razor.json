@@ -14412,13 +14412,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/josimarg/git/animetflix/Views/Generos/create.cshtml",
+      "TargetPath": "Views\\Generos\\create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/josimarg/git/animetflix/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/josimarg/git/animetflix/Views/Generos/delete.cshtml",
+      "TargetPath": "Views\\Generos\\delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/josimarg/git/animetflix/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/josimarg/git/animetflix/Views/Generos/edit.cshtml",
+      "TargetPath": "Views\\Generos\\edit.cshtml",
       "FileKind": "mvc"
     },
     {
