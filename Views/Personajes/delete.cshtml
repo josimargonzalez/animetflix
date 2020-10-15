@@ -1,11 +1,11 @@
 @using animetflix.Models.DTOs
-@model GeneroDTO
+@model PersonajeDTO
 
-<h3>Eliminar Género</h3>
+<h3>Eliminar Personaje</h3>
 <hr>
 <h3>¿Esta seguro de eliminar el registro?</h3>
 <div>
-    <h4>Género</h4>
+    <h4>Personaje</h4>
     <hr>
     <dl class="row">
         <dt class="col-sm-2">
@@ -15,7 +15,7 @@
             @Html.DisplayFor(model => model.Nombre)
         </dd>
     </dl>
-    <form asp-controller="Generos" asp-action="Delete" method="post">
+    <form asp-controller="Personajes" asp-action="Delete" method="post">
         <input type="hidden" asp-for="Id">
         <input type="submit" class="btn btn-danger" value="Eliminar">
         <a class="btn btn-primary" asp-action="Index">Volver</a>

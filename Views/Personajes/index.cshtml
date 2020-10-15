@@ -1,9 +1,9 @@
 @using animetflix.Models.DTOs
-@model List<GeneroDTO>
+@model List<PersonajeDTO>
 
-<h1>Lista de Géneros</h1>
+<h1>Lista de Personajes</h1>
 <div class="form-group">
-    <a asp-controller="Generos" asp-action="Create" class="btn btn-info">Agregar Género</a>
+    <a asp-controller="Personajes" asp-action="Create" class="btn btn-info">Agregar Personaje</a>
 </div>
 <br>
 <div class="row">
@@ -18,20 +18,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var genero in Model)
+                    @foreach (var personaje in Model)
                     {
                         <tr>
                             <td>
-                                <a asp-controller="Generos" asp-action="Edit" asp-route-id="@genero.Id" class="btn btn-success">Editar</a>
-                                <a asp-controller="Generos" asp-action="Delete" asp-route-id="@genero.Id" class="btn btn-danger">Eliminar</a>
+                                <a asp-controller="Personajes" asp-action="Edit" asp-route-id="@personaje.Id" class="btn btn-success">Editar</a>
+                                <a asp-controller="Personajes" asp-action="Delete" asp-route-id="@personaje.Id" class="btn btn-danger">Eliminar</a>
                             </td>
-                            <td>@genero.Nombre</td>
+                            <td>@personaje.Nombre</td>
                         </tr>   
                     }
                 </tbody>
             </table>
         } else {
-            <h3>No existen géneros para mostrar</h3>
+            <h3>No existen personajes para mostrar</h3>
         }
     </div>
 </div>

@@ -10,20 +10,20 @@ using AutoMapper;
 
 namespace animetflix.Controllers
 {
-    public class GenerosController : Controller
+    public class PersonajesController : Controller
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
 
-        public GenerosController(ApplicationDbContext context, IMapper mapper)
+        public PersonajesController(ApplicationDbContext context, IMapper mapper)
         {
             this.context = context;
             this.mapper = mapper;
         }
         public async Task<IActionResult> Index()
         {
-            var listaGeneros = await context.Generos.OrderBy(a => a.Nombre).ToListAsync();
-            var listaDTO = mapper.Map<List<GeneroDTO>>(listaGeneros);
+            var listaPersonajes = await context.Personajes.OrderBy(a => a.Nombre).ToListAsync();
+            var listaDTO = mapper.Map<List<PersonajeDTO>>(listaPersonajes);
 
             return View(listaDTO);
         }
@@ -34,61 +34,61 @@ namespace animetflix.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Id,Nombre")] GeneroCreacionDTO genero )
+        public async Task<IActionResult> Create([Bind("Id,Nombre")] PersonajeCreacionDTO personaje )
         {
             //Valida si las reglas del modelo se cumplen o no
             if (ModelState.IsValid)
             {
-                var generoDB = mapper.Map<Genero>(genero);
+                var personajeDB = mapper.Map<Personaje>(personaje);
                 
-                context.Add(generoDB);
+                context.Add(personajeDB);
                 await context.SaveChangesAsync();
                 
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(genero);
+            return View(personaje);
         }
 
         public async Task<IActionResult> Edit(int id)
         {
-            var genero = await context.Generos.FindAsync(id);
-            var generoDTO = mapper.Map<GeneroDTO>(genero);
+            var personaje = await context.Personajes.FindAsync(id);
+            var personajeDTO = mapper.Map<PersonajeDTO>(personaje);
             
-            return View(generoDTO);
+            return View(personajeDTO);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre")] GeneroDTO genero )
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre")] PersonajeDTO personaje )
         {
             //Valida si las reglas del modelo se cumplen o no
             if (ModelState.IsValid)
             {
-                var generoDB = mapper.Map<Genero>(genero);
-                generoDB.Id = id;
-                context.Update(generoDB);
+                var personajeDB = mapper.Map<Personaje>(personaje);
+                personajeDB.Id = id;
+                context.Update(personajeDB);
                 await context.SaveChangesAsync();
                 
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(genero);
+            return View(personaje);
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            var genero = await context.Generos.FindAsync(id);
-            var generoDTO = mapper.Map<GeneroDTO>(genero);
+            var personaje = await context.Personajes.FindAsync(id);
+            var personajeDTO = mapper.Map<PersonajeDTO>(personaje);
             
-            return View(generoDTO);
+            return View(personajeDTO);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int id, [Bind("Id,Nombre")] GeneroDTO genero )
+        public async Task<IActionResult> Delete(int id, [Bind("Id,Nombre")] PersonajeDTO personaje )
         {
-            var generoDB = mapper.Map<Genero>(genero);
-            generoDB.Id = id;
-            context.Remove(generoDB);
+            var personajeDB = mapper.Map<Personaje>(personaje);
+            personajeDB.Id = id;
+            context.Remove(personajeDB);
             await context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));

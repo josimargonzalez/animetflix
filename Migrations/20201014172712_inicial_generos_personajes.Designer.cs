@@ -9,8 +9,8 @@ using animetflix;
 namespace animetflix.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200915043235_Initial")]
-    partial class Initial
+    [Migration("20201014172712_inicial_generos_personajes")]
+    partial class inicial_generos_personajes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,11 +28,29 @@ namespace animetflix.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Nombre")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Generos");
+                });
+
+            modelBuilder.Entity("animetflix.Models.Entities.Personaje", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Personajes");
                 });
 #pragma warning restore 612, 618
         }

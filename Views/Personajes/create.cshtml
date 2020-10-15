@@ -1,11 +1,11 @@
 @using animetflix.Models.DTOs
-@model GeneroDTO
+@model PersonajeCreacionDTO
 
-<h3>Editar Género</h3>
+<h3>Crear Personaje</h3>
 <hr>
 <div class="row">
     <div class="col-md-4">
-        <form asp-controller="Generos" asp-action="Edit" method="post">
+        <form asp-controller="Personajes" asp-action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class"text-danger></div>
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
@@ -14,7 +14,7 @@
                     <span asp-validation-for="Nombre" class="text-danger"></span>
                 </div>
             </div>
-            <button class="btn btn-warning" type="submit">Guardar</button>
+            <button class="btn btn-success" type="submit">Crear</button>
             <a class="btn btn-primary" asp-action="Index">Volver</a>
         </form>
     </div>
