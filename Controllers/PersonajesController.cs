@@ -7,6 +7,8 @@ using animetflix.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using animetflix.Services;
+using System.IO;
 
 namespace animetflix.Controllers
 {
@@ -14,11 +16,14 @@ namespace animetflix.Controllers
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
+        private readonly LocalFileStorage storage;
+        private readonly string Contenedor = "Personajes";
 
-        public PersonajesController(ApplicationDbContext context, IMapper mapper)
+        public PersonajesController(ApplicationDbContext context, IMapper mapper, LocalFileStorage storage)
         {
             this.context = context;
             this.mapper = mapper;
+            this.storage = storage;
         }
         public async Task<IActionResult> Index()
         {
@@ -34,12 +39,21 @@ namespace animetflix.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Id,Nombre")] PersonajeCreacionDTO personaje )
+        public async Task<IActionResult> Create([FromForm] PersonajeCreacionDTO personaje )
         {
             //Valida si las reglas del modelo se cumplen o no
             if (ModelState.IsValid)
             {
                 var personajeDB = mapper.Map<Personaje>(personaje);
+
+                if (personaje.Foto != null)
+                {
+                    using var memoryStream = new MemoryStream();
+                    await personaje.Foto.CopyToAsync(memoryStream);
+                    var contenido = memoryStream.ToArray();
+                    var extension = Path.GetExtension(personaje.Foto.FileName);
+                    personajeDB.Foto = await storage.SaveFile(contenido, extension, Contenedor, personaje.Foto.ContentType);
+                }
                 
                 context.Add(personajeDB);
                 await context.SaveChangesAsync();
@@ -59,7 +73,7 @@ namespace animetflix.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre")] PersonajeDTO personaje )
+        public async Task<IActionResult> Edit(int id, [FromForm] PersonajeDTO personaje )
         {
             //Valida si las reglas del modelo se cumplen o no
             if (ModelState.IsValid)

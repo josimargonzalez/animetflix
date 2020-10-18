@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace animetflix.Models.DTOs
 {
@@ -18,6 +19,6 @@ namespace animetflix.Models.DTOs
         [StringLength(500, ErrorMessage = "El campo {0} no puede exceder los {1} caracteres")]
         public string Biografia { get; set; }
 
-        public string Foto { get; set; }
+        public IFormFile Foto { get; set; }
     }
 }

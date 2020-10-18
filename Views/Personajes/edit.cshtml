@@ -5,13 +5,34 @@
 <hr>
 <div class="row">
     <div class="col-md-4">
-        <form asp-controller="Personajes" asp-action="Edit" method="post">
+        <form asp-controller="Personajes" asp-action="Edit" enctype="multipart/form-data" method="post">
             <div asp-validation-summary="ModelOnly" class"text-danger></div>
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
                 <div>
                     <input asp-for="Nombre" class="form-control">
                     <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <div>
+                    <input asp-for="FechaNacimiento" class="form-control" type="date">
+                    <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Foto" class="control-label"></label>
+                <div>
+                    <input asp-for="Foto" class="form-control" type="file">
+                    <span asp-validation-for="Foto" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Biografia" class="control-label"></label>
+                <div>
+                    <textarea asp-for="Biografia" rows="5" class="form-control"></textarea>
+                    <span asp-validation-for="Biografia" class="text-danger"></span>
                 </div>
             </div>
             <button class="btn btn-warning" type="submit">Guardar</button>
