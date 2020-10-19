@@ -38,5 +38,21 @@ namespace animetflix.Services
 
             return urlBD;
         }
+
+        public Task DeleteFile(string ruta, string contenedor)
+        {
+            if (ruta != null)
+            {
+                var nombreArchivo = Path.GetFileName(ruta);
+                string directorio = Path.Combine(webHost.WebRootPath, contenedor, nombreArchivo);
+
+                if (File.Exists(directorio))
+                {
+                    File.Delete(directorio);
+                }
+            }
+
+            return Task.FromResult(0);
+        }
     }
 }

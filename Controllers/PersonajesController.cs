@@ -67,18 +67,30 @@ namespace animetflix.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var personaje = await context.Personajes.FindAsync(id);
-            var personajeDTO = mapper.Map<PersonajeDTO>(personaje);
+            var personajeEdicionDTO = mapper.Map<PersonajeEdicionDTO>(personaje);
             
-            return View(personajeDTO);
+            return View(personajeEdicionDTO);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [FromForm] PersonajeDTO personaje )
+        public async Task<IActionResult> Edit(int id, [FromForm] PersonajeEdicionDTO personaje )
         {
             //Valida si las reglas del modelo se cumplen o no
             if (ModelState.IsValid)
             {
                 var personajeDB = mapper.Map<Personaje>(personaje);
+
+                if (personaje.Foto != null)
+                {
+                    await storage.DeleteFile(personaje.Imagen, Contenedor);
+
+                    using var memoryStream = new MemoryStream();
+                    await personaje.Foto.CopyToAsync(memoryStream);
+                    var contenido = memoryStream.ToArray();
+                    var extension = Path.GetExtension(personaje.Foto.FileName);
+                    personajeDB.Foto = await storage.SaveFile(contenido, extension, Contenedor, personaje.Foto.ContentType);
+                }
+
                 personajeDB.Id = id;
                 context.Update(personajeDB);
                 await context.SaveChangesAsync();

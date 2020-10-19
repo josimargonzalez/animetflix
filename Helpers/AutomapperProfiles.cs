@@ -17,6 +17,10 @@ namespace animetflix.Helpers
 
             CreateMap<Personaje,PersonajeDTO>().ReverseMap();
             CreateMap<PersonajeCreacionDTO,Personaje>();
+            CreateMap<Personaje,PersonajeEdicionDTO>()
+                .ForMember(x=>x.Imagen, option => option.MapFrom(dest => dest.Foto))
+                .ForMember(x => x.Foto, option => option.Ignore())
+                .ReverseMap();
         }
     }
 }
