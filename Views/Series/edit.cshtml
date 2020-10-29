@@ -1,0 +1,55 @@
+@using animetflix.Models.DTOs
+@model SerieEdicionDTO
+
+<h3>Editar Serie</h3>
+<hr>
+<div class="row">
+        <form class="form-row" asp-controller="Series" asp-action="Edit" enctype="multipart/form-data" method="post">
+            <div class="col-md-5">
+                <div asp-validation-summary="ModelOnly" class"text-danger></div>
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <div>
+                        <input asp-for="Nombre" class="form-control">
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Anio" class="control-label"></label>
+                    <div>
+                        <input asp-for="Anio" class="form-control">
+                        <span asp-validation-for="Anio" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="Poster">
+                    <img src="@Model.Poster" style="width: 250px;">
+                </div>
+            </div>
+            <div class="col-md-5" style="margin-left: 50px;">
+                <div class="form-group">
+                    <label asp-for="Sinopsis" class="control-label"></label>
+                    <div>
+                        <textarea asp-for="Sinopsis" rows="5" class="form-control"></textarea>
+                        <span asp-validation-for="Sinopsis" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Trailer" class="control-label"></label>
+                    <div>
+                        <input asp-for="Trailer" class="form-control">
+                        <span asp-validation-for="Trailer" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PosterUrl" class="control-label"></label>
+                    <div>
+                        <input asp-for="PosterUrl" class="form-control" type="file">
+                        <span asp-validation-for="PosterUrl" class="text-danger"></span>
+                    </div>
+                </div>
+                <button class="btn btn-warning" type="submit">Guardar</button>
+                <a class="btn btn-primary" asp-action="Index">Volver</a>
+            </div>
+        </form>
+</div>

@@ -21,7 +21,7 @@
 }
 
 body {
-  overflow: hidden;
+  overflow: scroll;
   font-family: 'Baloo Tammudu 2', cursive;
   font-weight: 300;
   color: var(--primary);

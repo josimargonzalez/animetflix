@@ -1,0 +1,49 @@
+@using animetflix.Models.DTOs
+@model SerieCreacionDTO
+
+<h3>Crear Serie</h3>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Series" asp-action="Create" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class"text-danger></div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <div>
+                    <input asp-for="Nombre" class="form-control">
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Anio" class="control-label"></label>
+                <div>
+                    <input asp-for="Anio" class="form-control">
+                    <span asp-validation-for="Anio" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sinopsis" class="control-label"></label>
+                <div>
+                    <textarea asp-for="Sinopsis" rows="5" class="form-control"></textarea>
+                    <span asp-validation-for="Sinopsis" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trailer" class="control-label"></label>
+                <div>
+                    <input asp-for="Trailer" class="form-control">
+                    <span asp-validation-for="Trailer" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="PosterUrl" class="control-label"></label>
+                <div>
+                    <input asp-for="PosterUrl" class="form-control" type="file">
+                    <span asp-validation-for="PosterUrl" class="text-danger"></span>
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Crear</button>
+            <a class="btn btn-primary" asp-action="Index">Volver</a>
+        </form>
+    </div>
+</div>

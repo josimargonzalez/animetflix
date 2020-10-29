@@ -86,3 +86,7 @@
 /home/josimarg/git/animetflix/obj/Debug/netcoreapp3.1/Razor/Views/Personajes/index.cshtml.g.cs
 /home/josimarg/git/animetflix/bin/Debug/netcoreapp3.1/AutoMapper.dll
 /home/josimarg/git/animetflix/bin/Debug/netcoreapp3.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/home/josimarg/git/animetflix/obj/Debug/netcoreapp3.1/Razor/Views/Series/create.cshtml.g.cs
+/home/josimarg/git/animetflix/obj/Debug/netcoreapp3.1/Razor/Views/Series/delete.cshtml.g.cs
+/home/josimarg/git/animetflix/obj/Debug/netcoreapp3.1/Razor/Views/Series/edit.cshtml.g.cs
+/home/josimarg/git/animetflix/obj/Debug/netcoreapp3.1/Razor/Views/Series/index.cshtml.g.cs

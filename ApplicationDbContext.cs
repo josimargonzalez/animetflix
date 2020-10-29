@@ -22,5 +22,6 @@ namespace animetflix
 
         public DbSet<Genero> Generos { get; set; }
         public DbSet<Personaje> Personajes { get; set; }
+        public DbSet<Serie> Series { get; set; }
     }
 }

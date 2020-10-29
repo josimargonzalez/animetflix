@@ -14412,6 +14412,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/josimarg/git/animetflix/Views/Series/delete.cshtml",
+      "TargetPath": "Views\\Series\\delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/josimarg/git/animetflix/Views/Personajes/delete.cshtml",
       "TargetPath": "Views\\Personajes\\delete.cshtml",
       "FileKind": "mvc"
@@ -14419,6 +14424,11 @@
     {
       "FilePath": "/home/josimarg/git/animetflix/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/josimarg/git/animetflix/Views/Series/index.cshtml",
+      "TargetPath": "Views\\Series\\index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14447,8 +14457,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/josimarg/git/animetflix/Views/Series/edit.cshtml",
+      "TargetPath": "Views\\Series\\edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/josimarg/git/animetflix/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/josimarg/git/animetflix/Views/Series/create.cshtml",
+      "TargetPath": "Views\\Series\\create.cshtml",
       "FileKind": "mvc"
     },
     {
